@@ -7,6 +7,8 @@
     {
         $dom = new \DOMDocument();
         $dom->preserveWhiteSpace = false;
+        
+        libxml_use_internal_errors(true);
         $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
 
 //        remove the only first element
